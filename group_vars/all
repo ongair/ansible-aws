@@ -1,0 +1,5 @@
+base_directory: /opt/ongair-root/ongair/
+deploy_user: ubuntu
+repo: git@github.com:ongair/ansible.git
+branch: free-trial-setup
+virtualenv_path: /opt/ongair-root/env/

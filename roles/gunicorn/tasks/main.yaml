@@ -1,0 +1,17 @@
+- name: Install gunicorn daemon file.
+  sudo: yes
+  copy: src=trial-daemon.sh 
+        dest=/usr/bin/
+        mode=755
+
+- name: Make the gunicorn daemon file executable
+  sudo: yes
+  file: path=/usr/bin/trial-daemon.sh mode=0777
+
+- name: Install gunicorn upstart configuration file.
+  sudo: yes
+  copy: src=trialdaemon.conf dest=/etc/init/  
+
+- name: Restart the daemon
+  sudo: yes
+  service: name=trialdaemon state=restarted

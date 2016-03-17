@@ -1,0 +1,5 @@
+- hosts:
+    ongair-trial-daemon
+
+  roles:    
+    - deploy

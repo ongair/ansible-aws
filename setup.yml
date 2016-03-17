@@ -1,0 +1,8 @@
+- hosts:
+    ongair-trial-daemon
+
+  roles:
+    - setup
+    - nginx
+    - gunicorn
+    - deploy

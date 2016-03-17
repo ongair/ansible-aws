@@ -1,0 +1,3 @@
+- name: Restart Speedy Ticket Server
+  sudo: yes
+  service: name={{gunicorn_instance}} state=restarted

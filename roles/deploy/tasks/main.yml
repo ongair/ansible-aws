@@ -1,0 +1,19 @@
+- name: Checkout setup branch
+  git: repo={{repo}}
+       dest={{base_directory}}
+       version={{branch}}
+       force=yes
+
+- name: Upgrade the virtualenv.
+  sudo: yes
+  pip: requirements={{base_directory}}requirements.txt virtualenv={{ virtualenv_path }}
+
+- name: Restart The gunicorn daemon
+  sudo: yes
+  service: name=trialdaemon state=restarted
+
+- name: Reload Nginx
+  sudo: yes
+  service: name=nginx state=reloaded
+
+  

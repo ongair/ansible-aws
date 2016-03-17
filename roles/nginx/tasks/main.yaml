@@ -1,0 +1,13 @@
+- name: Install Nginx
+  sudo: yes
+  apt: pkg=nginx state=installed update_cache=yes
+
+- name: Disable the default site
+  sudo: yes
+  file: path=/etc/nginx/sites-enabled/default state=absent
+
+- name: Install Portal Nginx configuration file.
+  sudo: yes
+  copy: src=ongair-trial dest=/etc/nginx/sites-enabled/ongair-trial
+  notify: 
+     - Reload Nginx
