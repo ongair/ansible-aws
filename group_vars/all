@@ -1,5 +1,6 @@
 base_directory: /opt/ongair-root/ongair/
 deploy_user: ubuntu
 repo: git@github.com:ongair/ansible.git
-branch: free-trial-setup
+branch: develop
 virtualenv_path: /opt/ongair-root/env/
+aws_directory: aws

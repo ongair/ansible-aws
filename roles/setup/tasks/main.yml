@@ -41,6 +41,12 @@
   copy: src=~/.vault_pass.txt
         dest=/home/{{ deploy_user }}/
 
+- name: Upload ongair shared key.
+  copy: src=~/.ssh/ongair-shared.pem
+        dest=/home/{{ deploy_user }}/.ssh/
+        mode=400
+
+
 
 
 
