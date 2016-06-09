@@ -16,6 +16,8 @@
     - python-setuptools
     - python-virtualenv   
     - ansible
+    - libffi-dev
+    - libssl-dev
 
 - name: Create Base Directory
   sudo: yes
